@@ -3,38 +3,39 @@
 For this exericse, you'll be working with a database derived from the [Medicare Part D Prescriber Public Use File](https://www.hhs.gov/guidance/document/medicare-provider-utilization-and-payment-data-part-d-prescriber-0). More information about the data is contained in the Methodology PDF file. See also the included entity-relationship diagram.
 
 1. 
-    a. Which prescriber had the highest total number of claims (totaled over all drugs)? Report the npi and the total number of claims.
+    a. Which prescriber had the highest total number of claims (totaled over all drugs)? Report the npi and the total number of claims. #1912011792 w/ 4538 Claims.
     
-    b. Repeat the above, but this time report the nppes_provider_first_name, nppes_provider_last_org_name,  specialty_description, and the total number of claims.
+    b. Repeat the above, but this time report the nppes_provider_first_name, nppes_provider_last_org_name,  specialty_description, and the total number of claims. David Coffey, Family Practice, 4538
 
 2. 
-    a. Which specialty had the most total number of claims (totaled over all drugs)?
+    a. Which specialty had the most total number of claims (totaled over all drugs)? Family Practice
 
-    b. Which specialty had the most total number of claims for opioids?
+    b. Which specialty had the most total number of claims for opioids? Nurse Practitioner
 
     c. **Challenge Question:** Are there any specialties that appear in the prescriber table that have no associated prescriptions in the prescription table?
 
     d. **Difficult Bonus:** *Do not attempt until you have solved all other problems!* For each specialty, report the percentage of total claims by that specialty which are for opioids. Which specialties have a high percentage of opioids?
 
 3. 
-    a. Which drug (generic_name) had the highest total drug cost?
+    a. Which drug (generic_name) had the highest total drug cost? Esbriet
 
-    b. Which drug (generic_name) has the hightest total cost per day? **Bonus: Round your cost per day column to 2 decimal places. Google ROUND to see how this works.**
+    b. Which drug (generic_name) has the hightest total cost per day? **Bonus: Round your cost per day column to 2 decimal places. Google ROUND to see how this works.** Esbriet, $7,751.16 daily
 
 4. 
     a. For each drug in the drug table, return the drug name and then a column named 'drug_type' which says 'opioid' for drugs which have opioid_drug_flag = 'Y', says 'antibiotic' for those drugs which have antibiotic_drug_flag = 'Y', and says 'neither' for all other drugs. **Hint:** You may want to use a CASE expression for this. See https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-case/ 
 
-    b. Building off of the query you wrote for part a, determine whether more was spent (total_drug_cost) on opioids or on antibiotics. Hint: Format the total costs as MONEY for easier comparision.
+    b. Building off of the query you wrote for part a, determine whether more was spent (total_drug_cost) on opioids or on antibiotics. Hint: Format the total costs as MONEY for easier comparision. Opioids: $105,080,626.37
 
 5. 
-    a. How many CBSAs are in Tennessee? **Warning:** The cbsa table contains information for all states, not just Tennessee.
+    a. How many CBSAs are in Tennessee? **Warning:** The cbsa table contains information for all states, not just Tennessee. 58
 
-    b. Which cbsa has the largest combined population? Which has the smallest? Report the CBSA name and total population.
+    b. Which cbsa has the largest combined population? Which has the smallest? Report the CBSA name and total population. Largest: Nashville-Davidson-Murfreesboro-Franklin, TN - 1,830,410
+		Smallest: Morristown, TN - 116,352
 
-    c. What is the largest (in terms of population) county which is not included in a CBSA? Report the county name and population.
+    c. What is the largest (in terms of population) county which is not included in a CBSA? Report the county name and population. Shelby, TN - 937,847
 
 6. 
-    a. Find all rows in the prescription table where total_claims is at least 3000. Report the drug_name and the total_claim_count.
+    a. Find all rows in the prescription table where total_claims is at least 3000. Report the drug_name and the total_claim_count. Oxycodone HCL - 4538
 
     b. For each instance that you found in part a, add a column that indicates whether the drug is an opioid.
 
